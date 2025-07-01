@@ -1,0 +1,31 @@
+import java.util.*;
+class Main{
+    public static int gcd(int a,int b){
+        while(b!=0){
+            int tem = b;
+            b = a % b;
+            a = tem;
+        }
+        return a;
+        }
+    private static boolean cop(int a,int b){
+        return gcd(a, b) == 1;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a num");
+        int a= sc.nextInt();
+        for(int i=1;i<a;i++){
+            for(int j=1;j<i;j++){
+                for(int k=1;k<j;k++){
+                    if(j*j+k*k==i*i){
+                        if(cop(i,j)&&cop(j,k)&&cop(i,k)){
+                        System.out.println(k+" " +j+" " +i);
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+        }
